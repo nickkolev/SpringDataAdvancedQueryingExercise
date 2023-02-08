@@ -152,6 +152,11 @@ public class BookServiceImpl implements BookService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public int callUspTotalBooks(String firstName, String lastName) {
+        return this.bookRepository.callUspTotalBooks(firstName, lastName);
+    }
+
     private Book createBookFromInfo(String[] bookInfo) {
         EditionType editionType = EditionType.values()[Integer.parseInt(bookInfo[0])];
         LocalDate releaseDate = LocalDate

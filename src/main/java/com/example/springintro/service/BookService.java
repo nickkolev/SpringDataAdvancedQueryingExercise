@@ -38,4 +38,6 @@ public interface BookService {
     int addCopiesToBooksAfter(String date, int amount);
 
     int deleteWithCopiesLessThan(int amount);
+
+    int callUspTotalBooks(String firstName, String lastName);
 }

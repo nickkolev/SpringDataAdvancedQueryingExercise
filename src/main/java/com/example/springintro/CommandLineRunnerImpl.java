@@ -28,7 +28,15 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
     public void run(String... args) throws Exception {
         //seedData();
 
+        Scanner scanner = new Scanner(System.in);
 
+        String[] names = scanner.nextLine().split(" ");
+        String firstName = names[0];
+        String lastName = names[1];
+
+        int count = this.bookService.callUspTotalBooks(firstName, lastName);
+
+        System.out.printf("%s %s has written %d books%n", firstName, lastName, count);
 
         /* 13
         Scanner scanner = new Scanner(System.in);
